@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView sign;
     Spinner spinner;
     String cha;
+    public static String idno;
+
     FirebaseAuth au;
     private void regis(String id,String pwd, String cha){
     au.signInWithEmailAndPassword(id,pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String idno=id.getText().toString();
+                idno=id.getText().toString();
                 System.out.println(idno);
                 String passw=pass.getText().toString();
                 System.out.println(passw);

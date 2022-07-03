@@ -88,7 +88,7 @@ public void reg(String id, String pswd){
                 h.put("Password",pwd);
                 h.put("pp admin","pending");
                 h.put("reg admin","pending");
-                h.put("police admin","pending");
+                h.put("police","pending");
                 System.out.println(h);
                 if (TextUtils.isEmpty(na)||TextUtils.isEmpty(fn)||TextUtils.isEmpty(db)||TextUtils.isEmpty(ad)||TextUtils.isEmpty(cpwd)||TextUtils.isEmpty(po)||TextUtils.isEmpty(em)||TextUtils.isEmpty(pan1)||TextUtils.isEmpty(pwd)){
                     Toast.makeText(MainActivity2.this, "enter all details", Toast.LENGTH_SHORT).show();
