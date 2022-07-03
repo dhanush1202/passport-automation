@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PassportAutomation">
         <activity
-            android:name=".applicant"
-            android:label="applicant login"
+            android:name=".MainActivity2"
+            android:label="Sign In as Applicant"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity

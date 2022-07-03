@@ -2,8 +2,11 @@
     <string name="app_name">passport automation</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="sign_in">Sign in?</string>
+    <string name="sign_in">Sign in as Applicant?</string>
     <string name="button">Button</string>
+    <string name="welcome_to_online_passport_automation_system">Welcome to Online Passport Automation System</string>
+    <string name="iuhg">Sign In</string>
+    <string name="log_in">Log in</string>
     <string-array name="person">
         <item>Applicant</item>
         <item>Passport Administrator</item>
