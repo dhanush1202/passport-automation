@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button login;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         public void onComplete(@NonNull Task<AuthResult> task) {
             if(task.isSuccessful()){
                 Toast.makeText(MainActivity.this, "sucessfully logged in ", Toast.LENGTH_SHORT).show();
-
+//                FirebaseDatabase.getInstance().getReference().child("vendor1").setValue("hello1");
             }
             else{
                 Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
