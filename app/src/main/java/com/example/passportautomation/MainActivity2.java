@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class MainActivity2 extends AppCompatActivity {
+    static int d=1;
+    int e=10;
 EditText name;
 EditText fname;
 EditText dob;
@@ -75,6 +77,7 @@ public void reg(String id, String pswd){
                 String pwd=pswd.getText().toString();
                 String cpwd=cpswd.getText().toString();
                 h.put("type","Applicant");
+                h.put("application no", String.valueOf(d));
                 h.put("name",na);
                 h.put("fname",fn);
                 h.put("dob",db);
@@ -93,6 +96,7 @@ public void reg(String id, String pswd){
                 else{
                     reg(em,pwd);
                     db1.getReference().child("vendor").push().setValue(h);
+                    d+=1;
                 }
             }
         });

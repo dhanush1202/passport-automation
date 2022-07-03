@@ -10,10 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PassportAutomation">
         <activity
-            android:name=".MainActivity2"
-            android:label="Sign In as Applicant"
+            android:name=".police"
+
+            android:label="Police"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".radmin"
+
+            android:label="Regional Administrator"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ppadmin"
+
+            android:label="Passport Administrator"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity3"
+
+            android:label="Applicant Status"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="Sign In as Applicant"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

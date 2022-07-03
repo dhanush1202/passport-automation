@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button login;
+//    public static int ch=0;
+    public static final String key="com.example.passportautomation.key";
     EditText id;
     EditText pass;
     TextView sign;
@@ -34,7 +36,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
             if(task.isSuccessful()){
-                Toast.makeText(MainActivity.this, "sucessfully logged in ", Toast.LENGTH_SHORT).show();
+
+                if(cha.equals("Applicant")) {
+                    Intent inte = new Intent(MainActivity.this, MainActivity3.class);
+                    startActivity(inte);
+                }
+                if(cha.equals("Regional Administrator")){
+                    Intent inte = new Intent(MainActivity.this, radmin.class);
+                    startActivity(inte);
+                }
+                if(cha.equals("Police")){
+                    Intent inte = new Intent(MainActivity.this, police.class);
+                    startActivity(inte);
+                }
+                if(cha.equals("Passport Administrator")){
+                    Intent inte = new Intent(MainActivity.this, ppadmin.class);
+                    startActivity(inte);
+                }
+
+
 //                FirebaseDatabase.getInstance().getReference().child("vendor1").setValue("hello1");
             }
             else{
