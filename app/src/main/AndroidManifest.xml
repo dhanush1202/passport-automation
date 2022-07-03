@@ -11,6 +11,8 @@
         android:theme="@style/Theme.PassportAutomation">
         <activity
             android:name=".applicant"
+            android:label="applicant login"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
