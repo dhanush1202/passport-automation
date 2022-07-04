@@ -3,6 +3,7 @@ package com.example.passportautomation;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -30,6 +31,7 @@ EditText email;
 EditText pswd;
 EditText pan;
 EditText cpswd;
+Button but2;
 Button sig;
 FirebaseAuth au;
 FirebaseDatabase db1;
@@ -61,6 +63,8 @@ public void reg(String id, String pswd){
         pswd= findViewById(R.id.pswd);
         cpswd=findViewById(R.id.cpaswd);
         sig=findViewById(R.id.sign);
+//        but2=findViewById(R.id.button2);
+
         au=FirebaseAuth.getInstance();
         db1=FirebaseDatabase.getInstance();
         sig.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +104,7 @@ public void reg(String id, String pswd){
                 }
             }
         });
+
 
     }
 }
