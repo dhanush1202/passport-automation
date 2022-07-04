@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Name1"
+            android:layout_width="175dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/mail"
+            android:layout_width="208dp"
+            android:layout_height="31dp"
+            android:layout_weight="1"
+            android:text="Email" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Pan"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="Pan card" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="195dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Accept" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Reject" />
+    </LinearLayout>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

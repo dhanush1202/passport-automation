@@ -51,7 +51,7 @@ public void reg(String id, String pswd){
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        name=findViewById(R.id.Name);
+        name=findViewById(R.id.Name1);
         fname=findViewById(R.id.fname);
         dob=findViewById(R.id.dob);
         add=findViewById(R.id.address);
