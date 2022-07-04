@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class police extends AppCompatActivity {
 RecyclerView recyclerView;
@@ -36,7 +37,7 @@ myadapter myadapter;
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ArrayList<String> l1 = new ArrayList<>();
                 for (DataSnapshot sp:snapshot.getChildren()){
-                    if (( sp.child("police").getValue(String.class)).equals("pending")){
+                    if (Objects.equals(sp.child("police").getValue(String.class), "pending")){
                         String name=sp.child("name").getValue(String.class);
                         String email=sp.child("email").getValue(String.class);
                         String pan=sp.child("pan1").getValue(String.class);
