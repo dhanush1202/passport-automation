@@ -12,10 +12,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
@@ -34,6 +37,7 @@ EditText cpswd;
 Button but2;
 Button sig;
 FirebaseAuth au;
+FirebaseFirestore f;
 FirebaseDatabase db1;
 public void reg(String id, String pswd){
     au.createUserWithEmailAndPassword(id,pswd).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -64,7 +68,7 @@ public void reg(String id, String pswd){
         cpswd=findViewById(R.id.cpaswd);
         sig=findViewById(R.id.sign);
 //        but2=findViewById(R.id.button2);
-
+        f=FirebaseFirestore.getInstance();
         au=FirebaseAuth.getInstance();
         db1=FirebaseDatabase.getInstance();
         sig.setOnClickListener(new View.OnClickListener() {
@@ -98,8 +102,32 @@ public void reg(String id, String pswd){
                     Toast.makeText(MainActivity2.this, "enter all details", Toast.LENGTH_SHORT).show();
                 }
                 else{
+
                     reg(em,pwd);
-                    db1.getReference().child("vendor").push().setValue(h);
+                    f.collection("police").add(h).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(MainActivity2.this, "added", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    f.collection("ppadmin").add(h).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(MainActivity2.this, "added", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    f.collection("radmin").add(h).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(MainActivity2.this, "added", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    startActivity(new Intent(MainActivity2.this,MainActivity.class));
+//                    db1.getReference().child("vendor").push().setValue(h);
+//                    db1.getReference().child("police").push().setValue(h);
+//                    db1.getReference().child("ppadmin").push().setValue(h);
+//                    db1.getReference().child("radmin").push().setValue(h);
+
                     d+=1;
                 }
             }
